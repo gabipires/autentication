@@ -6,7 +6,7 @@ Construção de API autenticada usando spring boot e spring security. Para melho
 - Passo 3: implementação do JWT
 
 ## Autenticação x Autorização
-Autenticação -> quem é você
-Autorização -> permissões de acesso
-Primeiro é feita a autenticação e depois a autorização.
+-- Autenticação -> quem é você
+-- Autorização -> permissões de acesso
+-- Primeiro é feita a autenticação e depois a autorização.
   
