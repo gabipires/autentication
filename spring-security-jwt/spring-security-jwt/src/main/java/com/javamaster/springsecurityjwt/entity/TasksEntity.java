@@ -34,8 +34,8 @@ public class TasksEntity {
 
     @Column(name="date", nullable = false)
     private LocalDateTime date;
-
-    
+ 
+  
 
 
 }

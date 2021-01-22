@@ -28,7 +28,7 @@ public class TasksController {
 
     @GetMapping(value="/")
     public String teste(){
-        return "Teste Autentication";
+        return " ======  Teste Autentication  =======";
     }   
 
     @GetMapping(value="/list")

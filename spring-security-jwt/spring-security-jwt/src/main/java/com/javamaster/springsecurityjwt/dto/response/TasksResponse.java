@@ -22,7 +22,7 @@ public class TasksResponse {
     private String username;
     
     private String name;
-   
-    private LocalDateTime date;
+ 
+    private LocalDateTime date; 
     
 }
