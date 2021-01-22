@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping()
+@RequestMapping("v1")
 public class TasksController {
     private final TasksService tasksService;
     private final TasksMapper tasksMapper;
@@ -26,12 +26,28 @@ public class TasksController {
         this.tasksMapper = tasksMapper;
     }
 
-    @GetMapping(value="/")
+    @GetMapping(value="tasks")
     public String teste(){
         return " ======  Teste Autentication  =======";
+        
     }   
 
-    @GetMapping(value="/list")
+    @GetMapping(value="admin/delete/tasks")
+    public String delete(){
+        return " ======  Tela de DELETE  =======";
+    }
+
+    @GetMapping(value="admin/post/tasks")
+    public String post(){
+        return " ======  Tela de POST  =======";
+    }
+
+    @GetMapping(value="admin/put/tasks")
+    public String put(){
+        return " ======  Tela de PUT  =======";
+    }
+
+    @GetMapping(value="tasks/list")
     public ResponseEntity<List<TasksResponse>> list(){
         return ResponseEntity.ok(tasksService.listTasks()
                 .stream().map(x -> tasksMapper.toDto(x))
@@ -39,13 +55,8 @@ public class TasksController {
     }
 
 
-    @GetMapping(value="/list/{id}")
+    @GetMapping(value="tasks/list/{id}")
     public ResponseEntity<TasksResponse> listByUser(@PathVariable Integer id){
         return ResponseEntity.ok(tasksMapper.toDto(tasksService.listTasksByUser(id)));
-    }
-
-
-
-
-    
+    }    
 }
