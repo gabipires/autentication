@@ -10,4 +10,10 @@ Construção de API autenticada usando spring boot e spring security. Para melho
 - Autenticação -> quem é você
 - Autorização -> permissões de acesso
 - Primeiro é feita a autenticação e depois a autorização.
+
+## Demonstração
+
+![Alt Text](https://github.com/gabipires/autentication/blob/main/20210127_183322.gif)
+
+
   
