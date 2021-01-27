@@ -4,7 +4,7 @@ Construção de API autenticada usando spring boot e spring security. Para melho
 - Passo 1: autenticação em memória (ok)
 - Passo 2: autenticação via JPA (usando banco de dados) (ok)
 - Passo 3: implementação do JWT (ok)
-- Passo 4: implementar o login como um endpoint da API
+- Passo 4: implementar o login como um endpoint da API (ok)
 
 ## Autenticação x Autorização
 - Autenticação -> quem é você
