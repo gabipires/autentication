@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("v1")
+@RequestMapping("")
 public class TasksController {
     private final TasksService tasksService;
     private final TasksMapper tasksMapper;
@@ -26,28 +26,15 @@ public class TasksController {
         this.tasksMapper = tasksMapper;
     }
 
-    @GetMapping(value="tasks")
-    public String teste(){
-        return " ======  Teste Autentication  =======";
-        
-    }   
+    @GetMapping(value="/")
+    public String home(){
+        return 
+        "========  Estudos pré projeto - Autorização e Autenticação de usuários =======";
+    }  
 
-    @GetMapping(value="admin/delete/tasks")
-    public String delete(){
-        return " ======  Tela de DELETE  =======";
-    }
 
-    @GetMapping(value="admin/post/tasks")
-    public String post(){
-        return " ======  Tela de POST  =======";
-    }
-
-    @GetMapping(value="admin/put/tasks")
-    public String put(){
-        return " ======  Tela de PUT  =======";
-    }
-
-    @GetMapping(value="tasks/list")
+    //List all tasks
+    @GetMapping(value="/task/list")
     public ResponseEntity<List<TasksResponse>> list(){
         return ResponseEntity.ok(tasksService.listTasks()
                 .stream().map(x -> tasksMapper.toDto(x))
@@ -55,8 +42,28 @@ public class TasksController {
     }
 
 
-    @GetMapping(value="tasks/list/{id}")
+    //List task por id
+    @GetMapping(value="/task/list/{id}")
     public ResponseEntity<TasksResponse> listByUser(@PathVariable Integer id){
         return ResponseEntity.ok(tasksMapper.toDto(tasksService.listTasksByUser(id)));
-    }    
+    }  
+
+
+    // Delete task
+    @GetMapping(value="/admin/delete")
+    public String delete(){
+        return " ======  Endpoint DELETE task (TODO)  =======";
+    }
+
+    //Post task
+    @GetMapping(value="/admin/post")
+    public String post(){
+        return " ======  Endpoint POST task (TODO)  =======";
+    }
+
+    //Put task
+    @GetMapping(value="/admin/put")
+    public String put(){
+        return " ======  Endpoint PUT task (TODO)  =======";
+    }
 }
